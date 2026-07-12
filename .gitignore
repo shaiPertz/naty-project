@@ -37,3 +37,7 @@ dev-server.log
 
 .vercel
 .env*
+
+# audit reports
+lh-*.json
+psi-*.json
