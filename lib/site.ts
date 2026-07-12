@@ -11,8 +11,9 @@ export const site = {
   description:
     "נתי ניקיון — שירותי ניקיון מקצועיים לבתים, משרדים, חדרי מדרגות וניקיון לאחר שיפוץ. צוות אמין, חומרים ידידותיים לסביבה, אחריות מלאה ושירות בכל הארץ 24/7.",
 
-  // דומיין סופי — לעדכן לאחר הפריסה ל-Vercel (משמש ל-canonical / OG / sitemap)
-  url: "https://nati-clean.co.il",
+  // דומיין סופי — משמש ל-canonical / OG / sitemap.
+  // כרגע כתובת ה-Vercel החיה; כשיהיה דומיין מותאם (למשל nati-clean.co.il) — לעדכן כאן.
+  url: "https://naty-clean.vercel.app",
   locale: "he_IL",
 
   // טוקן אימות ל-Google Search Console — להדביק כאן את הקוד שתקבלו מ-GSC
