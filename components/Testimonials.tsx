@@ -24,7 +24,7 @@ const REVIEWS = [
 ];
 
 const Stars = () => (
-  <div className={styles.stars} aria-label="דירוג 5 מתוך 5 כוכבים">
+  <div className={styles.stars} role="img" aria-label="דירוג 5 מתוך 5 כוכבים">
     {Array.from({ length: 5 }).map((_, i) => (
       <svg key={i} width="18" height="18" viewBox="0 0 24 24" fill="#f5a623" aria-hidden="true">
         <path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1Z" />
