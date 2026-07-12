@@ -1,0 +1,23 @@
+.head {
+  text-align: center;
+  margin-bottom: 46px;
+}
+.eyebrow {
+  color: var(--acc);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+}
+.title {
+  font-size: clamp(1.875rem, 4.5vw, 2.875rem);
+  font-weight: 800;
+}
+.subtitle {
+  color: var(--sub);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  margin-top: 12px;
+  max-width: 520px;
+  margin-inline: auto;
+}

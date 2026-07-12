@@ -1,0 +1,19 @@
+.track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 200;
+  pointer-events: none;
+  background: transparent;
+}
+
+.bar {
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right center; /* RTL: מתחיל מימין */
+  background: linear-gradient(90deg, var(--acc), var(--acc2));
+  box-shadow: 0 1px 6px rgba(26, 131, 224, 0.5);
+  will-change: transform;
+}

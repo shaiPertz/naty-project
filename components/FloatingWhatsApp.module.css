@@ -1,0 +1,38 @@
+.fab {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 150;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 16px 38px rgba(37, 211, 102, 0.55);
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  z-index: -1;
+  animation: pulseRing 2.4s ease-out infinite;
+}
+
+@media (max-width: 600px) {
+  .fab {
+    width: 54px;
+    height: 54px;
+    bottom: 16px;
+    left: 16px;
+  }
+}

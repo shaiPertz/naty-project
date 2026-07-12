@@ -1,0 +1,320 @@
+/* ============================================================================
+   נתי ניקיון — Global styles
+   design tokens · reset · base elements · keyframes · accessibility modes
+   ============================================================================ */
+
+:root {
+  /* ── ערכת צבע (ocean / כחול) ── */
+  --pg: #eef4fb;
+  --card: #ffffff;
+  --ink: #0d2233;
+  --sub: #5a7186;
+  --acc: #1a83e0;
+  --acc2: #39b4ff;
+  --dark: #0a2540;
+  --dark2: #0e3a63;
+  --darkink: #dcebfb;
+  --line: #e2ebf5;
+
+  /* ── מיתוג נוסף ── */
+  --star: #f5a623;
+  --whatsapp: #25d366;
+  --ok: #22c55e;
+
+  /* ── פונטים: המשתנים --font-rubik / --font-assistant מוזרקים ע"י next/font ── */
+
+  /* ── פריסה ── */
+  --container: 1200px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 10px 24px rgba(13, 34, 51, 0.07);
+  --shadow-md: 0 22px 46px rgba(13, 34, 51, 0.11);
+  --shadow-lg: 0 30px 70px rgba(13, 34, 51, 0.2);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: var(--font-assistant), system-ui, sans-serif;
+  background: var(--pg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-rubik), system-ui, sans-serif;
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+p {
+  margin: 0;
+}
+a {
+  color: var(--acc);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--acc2);
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+button {
+  font-family: inherit;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+::selection {
+  background: var(--acc);
+  color: #fff;
+}
+
+/* ── Focus visible (נגישות מקלדת) ── */
+:focus-visible {
+  outline: 3px solid var(--acc);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Skip link (דלג לתוכן) ── */
+.skip-link {
+  position: absolute;
+  right: 12px;
+  top: -80px;
+  z-index: 1000;
+  background: var(--acc);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: top 0.2s var(--ease);
+}
+.skip-link:focus {
+  top: 12px;
+  color: #fff;
+}
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 22px;
+}
+
+/* ── עוטף התוכן להגדלת טקסט (נשלט מתפריט הנגישות) ── */
+#a11y-zoom {
+  zoom: var(--a11y-zoom, 1);
+}
+
+/* ── Scroll reveal base ──
+   ההסתרה תלויה במחלקת .js על <html> (נוספת ע"י סקריפט מוטבע), כך שללא
+   JavaScript כל התוכן נשאר גלוי — חשוב ל-SEO ולנגישות. */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  will-change: opacity, transform;
+}
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================================
+   Keyframes
+   ============================================================================ */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.55;
+  }
+  90% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-140px) scale(1.15);
+    opacity: 0;
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+@keyframes aurora {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(4%, -3%) scale(1.08);
+  }
+  66% {
+    transform: translate(-3%, 4%) scale(0.96);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+@keyframes livePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* ============================================================================
+   מצבי נגישות (מוחלים ע"י מחלקות על <html> מתוך תפריט הנגישות)
+   ============================================================================ */
+
+/* ניגודיות גבוהה */
+html.a11y-contrast {
+  --pg: #ffffff;
+  --card: #ffffff;
+  --ink: #000000;
+  --sub: #1a1a1a;
+  --acc: #0044aa;
+  --acc2: #0044aa;
+  --line: #000000;
+  --dark: #000000;
+  --dark2: #000000;
+  --darkink: #ffffff;
+}
+html.a11y-contrast a {
+  color: #0044aa;
+}
+html.a11y-contrast *,
+html.a11y-contrast *::before,
+html.a11y-contrast *::after {
+  text-shadow: none !important;
+}
+
+/* גווני אפור / מונוכרום */
+html.a11y-grayscale {
+  filter: grayscale(100%);
+}
+
+/* הדגשת קישורים */
+html.a11y-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  outline: 1px dashed currentColor;
+  outline-offset: 2px;
+}
+
+/* גופן קריא */
+html.a11y-readable,
+html.a11y-readable body,
+html.a11y-readable h1,
+html.a11y-readable h2,
+html.a11y-readable h3,
+html.a11y-readable h4 {
+  font-family: Arial, "Segoe UI", system-ui, sans-serif !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.7 !important;
+}
+
+/* עצירת אנימציות */
+html.a11y-no-motion *,
+html.a11y-no-motion *::before,
+html.a11y-no-motion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+html.a11y-no-motion [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* סמן גדול */
+html.a11y-big-cursor,
+html.a11y-big-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M6 3l30 18-13 3-3 13z' fill='%23fff' stroke='%23000' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E")
+      6 3,
+    auto;
+}
+
+/* ============================================================================
+   Reduced motion (מערכת המשתמש)
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

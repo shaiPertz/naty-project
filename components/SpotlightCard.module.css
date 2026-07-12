@@ -1,0 +1,26 @@
+.spot {
+  position: relative;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(57, 180, 255, 0.18),
+    transparent 45%
+  );
+  z-index: 1;
+}
+
+.spot:hover .glow {
+  opacity: 1;
+}
