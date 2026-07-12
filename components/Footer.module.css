@@ -1,0 +1,95 @@
+.footer {
+  background: linear-gradient(160deg, var(--dark), var(--dark2));
+  color: var(--darkink);
+  margin-top: 60px;
+}
+.grid {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 34px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--acc), var(--acc2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brandName {
+  font-family: var(--font-rubik), sans-serif;
+  font-weight: 800;
+  font-size: 1.1875rem;
+  color: #fff;
+}
+.about {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 280px;
+  color: var(--darkink);
+}
+.colTitle {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.link {
+  color: var(--darkink);
+}
+.link:hover {
+  color: #fff;
+}
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--darkink);
+}
+a.contact:hover {
+  color: #fff;
+}
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 20px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--darkink);
+}
+.a11yLink {
+  color: var(--acc2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.bottom::before {
+  content: "·";
+  opacity: 0.5;
+}
+@media (max-width: 480px) {
+  .bottom::before {
+    display: none;
+  }
+}

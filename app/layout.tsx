@@ -79,14 +79,14 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
   category: "cleaning service",
+  ...(site.googleSiteVerification
+    ? { verification: { google: site.googleSiteVerification } }
+    : {}),
 };
 
 export const viewport: Viewport = {
@@ -199,7 +199,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="he" dir="rtl" className={`${rubik.variable} ${assistant.variable}`}>
+    <html
+      lang="he"
+      dir="rtl"
+      className={`${rubik.variable} ${assistant.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/* מסמן שה-JS פעיל (לפני צביעה) — כדי שהאנימציות יסתירו תוכן רק כשיש JS,
             ומשחזר העדפות נגישות שנשמרו כדי למנוע הבהוב */}

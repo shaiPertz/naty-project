@@ -15,6 +15,10 @@ export const site = {
   url: "https://nati-clean.co.il",
   locale: "he_IL",
 
+  // טוקן אימות ל-Google Search Console — להדביק כאן את הקוד שתקבלו מ-GSC
+  // (Settings → Ownership verification → HTML tag) ואז לפרוס מחדש.
+  googleSiteVerification: "",
+
   // ── יצירת קשר (placeholders) ──
   phoneDisplay: "050-123-4567",
   phoneTel: "+972501234567",

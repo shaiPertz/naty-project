@@ -30,3 +30,7 @@ next-env.d.ts
 
 # vercel
 .vercel
+
+# local logs
+*.log
+dev-server.log

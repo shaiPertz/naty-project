@@ -1,0 +1,90 @@
+.section {
+  padding-top: 78px;
+  padding-bottom: 20px;
+  max-width: 1100px;
+}
+
+.wrap {
+  position: relative;
+}
+.frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  user-select: none;
+  touch-action: none;
+}
+.img {
+  object-fit: cover;
+}
+.clip {
+  position: absolute;
+  inset: 0;
+  will-change: clip-path;
+}
+
+.tag {
+  position: absolute;
+  top: 16px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: #fff;
+  z-index: 3;
+}
+.tagBefore {
+  right: 16px;
+  background: rgba(13, 34, 51, 0.7);
+  backdrop-filter: blur(4px);
+}
+.tagAfter {
+  left: 16px;
+  background: var(--acc);
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 2;
+}
+.knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 4;
+}
+.range:focus-visible {
+  outline: none;
+}
+.range:focus-visible + .knob,
+.frame:focus-within .knob {
+  box-shadow: 0 0 0 4px rgba(26, 131, 224, 0.5), 0 6px 18px rgba(0, 0, 0, 0.28);
+}

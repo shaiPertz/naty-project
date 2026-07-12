@@ -1,0 +1,60 @@
+.band {
+  position: relative;
+  margin-top: 60px;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--dark), var(--dark2));
+}
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bubble {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff, var(--acc2));
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.inner {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+.heading {
+  color: #fff;
+  font-size: clamp(1.75rem, 4vw, 2.625rem);
+  font-weight: 800;
+  margin-bottom: 48px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 26px;
+  margin: 0;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+.numWrap {
+  margin: 0;
+}
+.num {
+  font-family: var(--font-rubik), sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.375rem, 5vw, 3.375rem);
+  color: #fff;
+  line-height: 1;
+  display: inline-block;
+}
+.label {
+  color: var(--darkink);
+  font-weight: 600;
+  margin-top: 8px;
+  font-size: 0.9375rem;
+}
